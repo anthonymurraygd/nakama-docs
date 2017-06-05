@@ -1,4 +1,4 @@
-= Support
+= Support | Nakama server documentation
 
 == Recovery
 
@@ -32,7 +32,7 @@ The log may give you information on what caused the issue.
 
 == How to submit a bug report
 
-We use GitHub for issue tracking: https://github.com/heroiclabs/nakama/issues. If you want to report a suspected bug in Nakama, open an issue there.
+We use GitHub for issues: https://github.com/heroiclabs/nakama/issues. If you want to report a suspected bug in Nakama, open an issue there.
 
 The most important things for you to provide for us are:
 
@@ -49,7 +49,7 @@ The most important things for you to provide for us are:
 
 [source,bash]
 ----
-# this saves the output to a log file named 'doctor.log' in the current working directory
+# This saves the output to a log file named 'doctor.log' in the current working dir
 nakama doctor > doctor.log
 ----
 

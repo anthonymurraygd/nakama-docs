@@ -1,3 +1,5 @@
+= Authentication | Nakama server documentation
+
 Authenticating with Nakama requires the server key. This key can be found in the link:../../configure.adoc[server configuration]. We strongly suggest that you **use a unique key on your production servers**.
 
 In the Unity client, an `INClient` can be constructed with the server key like below:
@@ -25,7 +27,7 @@ client.Connect(session);
 
 There are three main login mechanisms so far; ID-based Login, Social Login, and Email Login. Currently supported Social Login providers include Facebook, Google, Steam and GameCenter. You have the option of providing any combination of login options.
 
-=== Device ID
+== Device ID
 
 The most effortless way of authenticating a user with Nakama is to use a Device ID. This can be done entirely without user interaction, so the user experience is completely frictionless.
 
@@ -76,11 +78,11 @@ client.Login(request, (INSession session) => {
 });
 ----
 
-=== Email
+== Email
 
 Email based login is for users that still want to log in, but would prefer not to connect through their social or platform accounts. Users are registered and logged in via an email address and password.
 
-==== Registration
+=== Registration
 
 [source,csharp]
 ----
@@ -97,7 +99,7 @@ client.Register(message, (INSession newSession) =>
 });
 ----
 
-==== Login
+=== Login
 
 [source,csharp]
 ----
@@ -114,13 +116,13 @@ client.Login(message, (INSession newSession) =>
 });
 ----
 
-=== Social Login
+== Social Login
 
 Nakama provides a simple mechanism for your game to implement social login, allowing your gamers to sign in using Facebook, Google, Steam or GameCenter and start playing right away.
 
 To perform a social login, ensure the gamer is first logged into their social account. Once the social authentication is complete, the last step is to send Nakama the access token available. This is usually an OAuth 2.0 access token, but varies by social provider.
 
-==== Facebook
+=== Facebook
 
 You will need the Facebook Unity SDK which can be downloaded https://developers.facebook.com/docs/unity/downloads[here^]. Follow the https://developers.facebook.com/docs/unity/examples[Facebook Unity Examples^] on how to add the asset to your project. You must also complete the instructions on https://developers.facebook.com/docs/unity/reference/current/ConfigureiOSAndroid[Facebook's developer guide^] on how to configure your iOS or Android client.
 
@@ -183,7 +185,7 @@ FB.Login("email", (ILoginResult result) => {
 
 ----
 
-==== Google
+=== Google
 
 Similar to Facebook, authenticating via Google requires you to have an OAuth `AccessToken`. Once you have obtained the `AccessToken` you can use it to register and login to Nakama.
 
@@ -209,7 +211,7 @@ client.Login(message, (INSession session) =>
 });
 ----
 
-==== Steam
+=== Steam
 
 NOTE: **Make sure you have a Steam application set up.**
 A Steam App ID and Publisher Key are required; set these in the Nakama link:../../configure.adoc[configuration] file.
@@ -238,7 +240,7 @@ client.Login(message, (INSession session) =>
 });
 ----
 
-==== Game Center
+=== Game Center
 
 Nakama supports authentication using Game Center Player IDs on compatible Apple devices. This is a good frictionless authentication option as it requires no user input.
 
@@ -276,7 +278,7 @@ client.Login(message, (INSession session) =>
 });
 ----
 
-=== Custom
+== Custom
 
 You can use a custom ID to authenticate users with Nakama. This is particularly useful if you have an external user identity service and would like to mirror the user IDs used in your system into Nakama.
 
