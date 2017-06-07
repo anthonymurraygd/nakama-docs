@@ -83,11 +83,11 @@ Nakama Enterprise is required to allow for data routing across multiple Nakama s
 
 === Does Nakama provide transactional guarantees on storage operations?
 
-Yes. All batch operations are committed to the database as a single transaction. If one of the operations fails all other operations in the batch are reverted. For more information see the link:./development/storage.adoc[Storage documentation].
+Yes. All batch operations are committed to the database as a single transaction. If one of the operations fails all other operations in the batch are reverted. For more information see the link:../development/storage.adoc[Storage documentation].
 
 === Does Nakama store chat history?
 
-Nakama keeps all chat history. It is up to each studio and depends on the type of gameplay how much message history should be kept. For more information see the link:./development/realtime-chat.adoc[Realtime Chat documentation].
+Nakama keeps all chat history. It is up to each studio and depends on the type of gameplay how much message history should be kept. For more information see the link:../development/realtime-chat.adoc[Realtime Chat documentation].
 
 === Can you block users in Nakama?
 
@@ -121,7 +121,7 @@ Yes, you can run Nakama yourself locally for development, on premise for eSports
 
 === Can you host Nakama for me?
 
-We can host Nakama for you. The link:/managed-cloud[Managed Cloud] is available to all developers (as of April 2017). This includes a developer dashboard for simple scale out of your servers as your game moves into production. Heroic Labs is made up of a dedicated and experienced team to handle server operations, backups, and availability with your games so you can concentrate on the most successful gameplay experience for your players.
+We can host Nakama for you. The link:/managed-cloud/[Managed Cloud] is available to all developers (as of April 2017). This includes a developer dashboard for simple scale out of your servers as your game moves into production. Heroic Labs is made up of a dedicated and experienced team to handle server operations, backups, and availability with your games so you can concentrate on the most successful gameplay experience for your players.
 
 === Can I run multiple games on one Nakama server?
 
@@ -133,7 +133,7 @@ The open-source Nakama server can be scaled by running multiple instances of the
 
 The Nakama enterprise release includes scale out capabilities to replicate presences (information about connected users) between server instances across a cluster. This ensures all users can find, chat, and match against any user connected online across the cluster. This server release is available via licenses or auto-enabled if you use our managed cloud.
 
-These licenses and support contracts fund the development of Nakama server as open-source software. Have a look at our link:/services[services] page for more information.
+These licenses and support contracts fund the development of Nakama server as open-source software. Have a look at our link:/services/[services] page for more information.
 
 === How is Nakama different from other backend providers?
 
@@ -150,7 +150,7 @@ Some features include:
 - A built-in social graph system where the friend system is tightly integrated with other subsystems like realtime chat, multiplayer, and groups.
 - Batch storage operations with transactional guarantees.
 
-For a full list of features have a look at link:./index.adoc[our documentation].
+For a full list of features have a look at link:../[our documentation].
 
 === How is Nakama different from Photon?
 
