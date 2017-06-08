@@ -117,13 +117,13 @@ Register a function with the server which will be executed after every message w
 local function my_func(context, payload)
   -- do some work
 end
-nk.register_after(my_func, "TFriendAdd")
+nk.register_after(my_func, "FriendAdd")
 ----
 
 '''
 === `register_before (func, msgname)`
 
-Register a function with the server which will be executed before every message with the specified message name. For example `register_before(somefunc, "TFriendAdd")` will execute the function before the TFriendAdd message is executed by the server's message pipeline. This can be used to apply custom conditions to standard features in the server.
+Register a function with the server which will be executed before every message with the specified message name. For example `register_before(somefunc, "FriendAdd")` will execute the function before the FriendAdd message is executed by the server's message pipeline. This can be used to apply custom conditions to standard features in the server.
 
 [.small]#Parameters#
 
@@ -142,7 +142,7 @@ local function my_func(context, payload)
   -- do some work
   return payload -- important!
 end
-nk.register_before(my_func, "TFriendAdd")
+nk.register_before(my_func, "FriendAdd")
 ----
 
 '''
@@ -337,6 +337,74 @@ All examples assume the "nakamax" module has been imported:
 [source, lua]
 ----
 local nx = require("nakamax")
+----
+
+'''
+=== `base16_decode (input)`
+
+Base 16 decode the supplied input.
+
+[.small]#Returns#
+
+(string) - The base 16 encoded input.
+
+[.small]#Example#
+
+[source, lua]
+----
+local decoded = nx.base16_decode("48656C6C6F20776F726C64")
+print(decoded) -- outputs "Hello world"
+----
+
+'''
+=== `base16_encode (input)`
+
+Base 16 encode the supplied input.
+
+[.small]#Returns#
+
+(string) - The input to base 16 encode.
+
+[.small]#Example#
+
+[source, lua]
+----
+local encoded = nx.base16_encode("Hello world")
+print(encoded) -- outputs "48656C6C6F20776F726C64"
+----
+
+'''
+=== `base64_decode (input)`
+
+Base 64 decode the supplied input.
+
+[.small]#Returns#
+
+(string) - The base 64 encoded input.
+
+[.small]#Example#
+
+[source, lua]
+----
+local decoded = nx.base64_decode("SGVsbG8gd29ybGQ=")
+print(decoded) -- outputs "Hello world"
+----
+
+'''
+=== `base64_encode (input)`
+
+Base 64 encode the supplied input.
+
+[.small]#Returns#
+
+(string) - The base 64 encoded input.
+
+[.small]#Example#
+
+[source, lua]
+----
+local encoded = nx.base64_encode("Hello world")
+print(encoded) -- outputs "SGVsbG8gd29ybGQ="
 ----
 
 '''

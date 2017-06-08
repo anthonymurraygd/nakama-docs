@@ -58,10 +58,10 @@ local function limit_friends(context, payload)
   end
   return payload
 end
-nk.register_before(limit_friends, "TFriendAdd")
+nk.register_before(limit_friends, "FriendAdd")
 ----
 
-The code above fetches the current user's profile and checks the metadata (which is structured as "{level: 12}"). If a user's level is too low an error is thrown to prevent the `TFriendAdd` message from completing in the server pipeline.
+The code above fetches the current user's profile and checks the metadata (which is structured as "{level: 12}"). If a user's level is too low an error is thrown to prevent the `FriendAdd` message from completing in the server pipeline.
 
 TIP: **Pipeline passthrough**
 You must remember to pass through the payload (which contains the message) to continue in the server. See the "return payload" code above.
@@ -82,7 +82,7 @@ local function add_reward(context, payload)
   }
   nk.storage_write(new_records)
 end
-nk.register_after(add_reward, "TFriendAdd")
+nk.register_after(add_reward, "FriendAdd")
 ----
 
 The code above writes a reward to a user's storage when they add a friend.
