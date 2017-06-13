@@ -6,7 +6,7 @@ You can use a YAML configuration file to configure many aspects of how your Naka
 
 * `name`: Unique node name. This name is also used in the log files.
 ** Default value is `"nakama-xxxx"`, where `xxxx` represents 4 random characters.
-* `datadir`: Data directory to store server data. The absolute path to a writeable folder.
+* `data_dir`: Data directory to store server data. The absolute path to a writeable folder.
 ** Default value is ``"./data/"``.
 * `port`: The port to listen on when accepting connections from the client. This listens on all interfaces.
 ** Default value is `7350`. Unless explicitly defined, other ports will be chosen sequentially from here upwards.
@@ -80,7 +80,7 @@ The following configuration options are available only in the https://heroiclabs
 [source,yaml]
 ----
 name: nakama-node-1
-datadir: "./data/"
+data_dir: "./data/"
 port: 7350
 ops_port: 7351
 dsns:
