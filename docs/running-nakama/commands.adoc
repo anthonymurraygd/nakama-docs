@@ -2,6 +2,9 @@
 
 Day to day operation of Nakama is straightforward, requiring minimal intervention. There are just three `nakama` commands that you'll need.
 
+You can use any of the configuation fields via the command-line override the flag. For instance:
+`--runtime.http_key=mykey`
+
 == nakama migrate
 
 When you first run Nakama you need to prepare the schema of the data that Nakama will store in CockroachDB. Similarly, when a new Nakama version is released, you need to migrate the data schema to that of the new version. In both situations you use the `nakama migrate` sub-command.

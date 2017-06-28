@@ -60,7 +60,7 @@ These are the parameters you're most likely to want to change during development
 * `port`: the port for accepting connections from the client, listening on all interfaces. Unless explicitly defined, other ports will be chosen sequentially from here upwards.
 ** default: `7350`
 
-* `ops_port`: the port for accepting connections to the ops dashboard, listening on all interfaces.
+* `dashboard_port`: the port for accepting connections to the ops dashboard, listening on all interfaces.
 ** default: `7351`
 
 * `dsns`: a list of fully qualified JDBC addresses of CockroachDB servers.
@@ -82,7 +82,7 @@ Assuming you didn't change the defaults, our basic Nakama configuration YAML fil
 name: nakama-node-1
 data_dir: "./data/"
 port: 7350
-ops_port: 7351
+dashboard_port: 7351
 dsns:
   - "root@127.0.0.1:26257"
 session:

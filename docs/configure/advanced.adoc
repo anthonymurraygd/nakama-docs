@@ -2,6 +2,9 @@
 
 You can use a YAML configuration file to configure many aspects of how your Nakama server runs. Here is a complete reference of the parameters you can use in the configuration file.
 
+You can use any of the configuation fields via the command-line override the flag. For instance:
+`--runtime.http_key=mykey`
+
 === Basic settings
 
 * `name`: Unique node name. This name is also used in the log files.
@@ -10,7 +13,7 @@ You can use a YAML configuration file to configure many aspects of how your Naka
 ** Default value is ``"./data/"``.
 * `port`: The port to listen on when accepting connections from the client. This listens on all interfaces.
 ** Default value is `7350`. Unless explicitly defined, other ports will be chosen sequentially from here upwards.
-* `ops_port`: The port to listen on when accepting connections for the ops dashboard. This listens on all interfaces.
+* `dashboard_port`: The port to listen on when accepting connections for the ops dashboard. This listens on all interfaces.
 ** Default value is `7351`.
 * `dsns`: Fully qualified list of JDBC addresses to CockroachDB servers.
 ** Default value is `root@127.0.0.1:26257`.
@@ -58,6 +61,16 @@ NOTE: Most game providers are fully configurable from within your client code. H
 NOTE: *Steam login*
 Until you specify your own values here, Steam login is disabled.
 
+=== Runtime settings
+
+The following settins affect the Lau Runtime environment.
+
+* `env`: A Key-Value pair of all the environmental values available to the Lua scripts. This is best suited to be used for various third-party API Keys.
+* `path`: Path used to discover Lua modules. This is the same as the Lua Path.
+** Default value is "`data_dir`/modules".
+* `http_key`: The key used to authenticate HTTP invocations.
+** Default value `defaultkey`.
+
 == Nakama Enterprise Settings
 
 The following configuration options are available only in the https://heroiclabs.com/services/#enterprise[Nakama Enterprise^] version of the Nakama server:
@@ -82,7 +95,7 @@ The following configuration options are available only in the https://heroiclabs
 name: nakama-node-1
 data_dir: "./data/"
 port: 7350
-ops_port: 7351
+dashboard_port: 7351
 dsns:
   - "root@127.0.0.1:26257"
 join:
@@ -114,4 +127,10 @@ social:
   steam:
     publisher_key: ""
     app_id: 0
+
+runtime:
+  env:
+    - example_apikey: "example_apivalue"
+  path: "/tmp/modules/folders"
+  http_key: "defaultkey"
 ----
