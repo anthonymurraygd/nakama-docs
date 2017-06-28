@@ -56,7 +56,7 @@ social:
     app_id: 0
     publisher_key:
 ops_port: 7351
-dsns: [root@cockroachdb:26257]
+db: [root@cockroachdb:26257]
 port: 7350
 session:
   encryption_key: defaultencryptionkey

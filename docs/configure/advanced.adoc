@@ -15,7 +15,7 @@ You can use any of the configuation fields via the command-line override the fla
 ** Default value is `7350`. Unless explicitly defined, other ports will be chosen sequentially from here upwards.
 * `dashboard_port`: The port to listen on when accepting connections for the ops dashboard. This listens on all interfaces.
 ** Default value is `7351`.
-* `dsns`: Fully qualified list of JDBC addresses to CockroachDB servers.
+* `db`: Fully qualified list of JDBC addresses to CockroachDB servers.
 ** Default value is `root@127.0.0.1:26257`.
 
 === Session settings
@@ -96,7 +96,7 @@ name: nakama-node-1
 data_dir: "./data/"
 port: 7350
 dashboard_port: 7351
-dsns:
+db:
   - "root@127.0.0.1:26257"
 join:
   - "10.0.0.2:7352"
